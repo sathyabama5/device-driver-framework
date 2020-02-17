@@ -18,7 +18,7 @@ char *TCID = "spi_test";
 int TST_TOTAL = 3;
 
 
-static const char *spi_dev = "/dev/spidev1.1";
+static const char *spi_dev = "/dev/spidev0.1";
 static uint8_t mode;
 static uint8_t bits = 8;
 static uint32_t speed = 500000;
