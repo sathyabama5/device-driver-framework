@@ -52,15 +52,11 @@ static int transfer(int fd)
 		tst_brkm(TCONF, NULL, "cant send spi message");
 
 	for (ret = 0; ret < ARRAY_SIZE(tx); ret++) {
-		if (!(ret % 6))
-			puts("");
 		if(rx[ret]!=tx[ret])
 		{
 		   return 1;
         	}
 	}
-	puts("");
-
 	return 0;
 }
 	
