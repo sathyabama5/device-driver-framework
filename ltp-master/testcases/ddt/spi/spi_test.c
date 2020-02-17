@@ -11,6 +11,13 @@
 #include <linux/types.h>
 #include <linux/spi/spidev.h>
 
+#include "test.h"
+#include "safe_macros.h"
+
+char *TCID = "spi_test";
+int TST_TOTAL = 3;
+
+
 static const char *spi_dev = "/dev/spidev1.1";
 static uint8_t mode;
 static uint8_t bits = 8;
@@ -101,7 +108,7 @@ static void parse_opts(int argc, char *argv[])
 
 		switch (c) {
 		case 'D':
-			device = optarg;
+			spi_dev = optarg;
 			break;
 		case 's':
 			speed = atoi(optarg);
