@@ -1,5 +1,5 @@
 #Tag       Test case
 #---------------------------------------
 rtc_test   ddt/rtc_test -d /dev/rtc0
-spi_test   ddt/spi_test -D -s -d -b /dev/spidev0.1
+spi_test   ddt/spi_test -D /dev/spidev0.1
 #---------------------------------------
