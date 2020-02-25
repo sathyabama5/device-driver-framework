@@ -16,7 +16,7 @@
 #include "test.h"
 #include "safe_macros.h"
 
-char *TCID = "ethernets_test";
+char *TCID = "ethernet_test";
 int TST_TOTAL = 3;
 
 int getgatewayandiface(void)
