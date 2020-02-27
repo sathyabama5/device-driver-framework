@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <linux/i2c-dev.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/types.h>
@@ -33,14 +34,14 @@ int TST_TOTAL = 3;
 
 int main(int argc, char *argv[])
 {
-    int fd;
+    int gy-521_fd ;
     char *fileName = "/dev/i2c-0";
     int  address = 0x68;
 	  if (access(fileName,F_OK) == -1)
     {
-        tst_brkm(TCONF, NULL, "couldn't find gy-521 device '%s'", filename);
+        tst_brkm(TCONF, NULL, "couldn't find gy-521 device '%s'", fileName);
     }
-	  gy-521_fd = SAFE_OPEN(NULL, filename, O_RDWR);
+	  gy-521_fd = SAFE_OPEN(NULL, fileName, O_RDWR);
 		if (ioctl(fd, I2C_SLAVE, address) < 0) 
 		{
        tst_resm(TFAIL | TERRNO, "I2C_SLAVE ioctl failed");
