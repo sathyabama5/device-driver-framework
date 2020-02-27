@@ -28,7 +28,7 @@
 #define MPU_POWER1 0x6b
 #define MPU_POWER2 0x6c
 
-int gy521_fd = -1;
+
 char *TCID = "gy521_test";
 int TST_TOTAL = 3;
 
