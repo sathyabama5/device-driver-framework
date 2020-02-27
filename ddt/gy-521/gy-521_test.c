@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 			 exit(1);        
     }
     int8_t power = i2c_smbus_read_byte_data(fd, MPU_POWER1);
-    i2c_smbus_write_byte_data(fd, MPU_POWER1, ~(1 << 6) & power);
+    i2c_smbus_write_byte_data(gy521_fd, MPU_POWER1, ~(1 << 6) & power);
 
     while (1) 
 		{
