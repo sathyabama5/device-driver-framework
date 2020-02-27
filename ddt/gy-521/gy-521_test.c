@@ -32,7 +32,6 @@
 char *TCID = "gy521_test";
 int TST_TOTAL = 3;
 
-};
 
 int main(int argc, char *argv[])
 {
@@ -49,7 +48,7 @@ int main(int argc, char *argv[])
        tst_resm(TFAIL | TERRNO, "I2C_SLAVE ioctl failed");
 			 exit(1);        
     }
-    int8_t power = i2c_smbus_read_byte_data(fd, MPU_POWER1);
+    int8_t power = i2c_smbus_read_byte_data(gy521_fd, MPU_POWER1);
     i2c_smbus_write_byte_data(gy521_fd, MPU_POWER1, ~(1 << 6) & power);
 
     while (1) 
