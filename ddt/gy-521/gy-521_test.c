@@ -6,6 +6,7 @@
 #include <sys/ioctl.h>
 #include <sys/types.h>
 #include <linux/i2c.h>
+ #include <i2c/smbus.h>
 #include "test.h"
 #include "safe_macros.h"
 
