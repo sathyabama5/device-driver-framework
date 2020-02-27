@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/types.h>
+#include <linux/i2c.h>
 #include "test.h"
 #include "safe_macros.h"
 
