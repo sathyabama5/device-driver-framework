@@ -31,9 +31,7 @@
 int gy521_fd = -1;
 char *TCID = "gy521_test";
 int TST_TOTAL = 3;
-static const option_t options[] = {
-	{"d:", &dflag,&fileName},
-	{NULL, NULL, NULL}
+
 };
 
 int main(int argc, char *argv[])
@@ -56,22 +54,22 @@ int main(int argc, char *argv[])
 
     while (1) 
 		{
-        int16_t temp = i2c_smbus_read_byte_data(fd, MPU_TEMP1) << 8 |
+        int16_t temp = i2c_smbus_read_byte_data(gy521_fd, MPU_TEMP1) << 8 |
                         i2c_smbus_read_byte_data(fd, MPU_TEMP2);
 
-        int16_t xaccel = i2c_smbus_read_byte_data(fd, MPU_ACCEL_XOUT1) << 8 |
-                         i2c_smbus_read_byte_data(fd, MPU_ACCEL_XOUT2);
-        int16_t yaccel = i2c_smbus_read_byte_data(fd, MPU_ACCEL_YOUT1) << 8 |
-                         i2c_smbus_read_byte_data(fd, MPU_ACCEL_YOUT2);
-        int16_t zaccel = i2c_smbus_read_byte_data(fd, MPU_ACCEL_ZOUT1) << 8 |
-                         i2c_smbus_read_byte_data(fd, MPU_ACCEL_ZOUT2);
+        int16_t xaccel = i2c_smbus_read_byte_data(gy521_fd, MPU_ACCEL_XOUT1) << 8 |
+                         i2c_smbus_read_byte_data(gy521_fd, MPU_ACCEL_XOUT2);
+        int16_t yaccel = i2c_smbus_read_byte_data(gy521_fd, MPU_ACCEL_YOUT1) << 8 |
+                         i2c_smbus_read_byte_data(gy521_fd, MPU_ACCEL_YOUT2);
+        int16_t zaccel = i2c_smbus_read_byte_data(gy521_fd, MPU_ACCEL_ZOUT1) << 8 |
+                         i2c_smbus_read_byte_data(gy521_fd, MPU_ACCEL_ZOUT2);
 
-        int16_t xgyro = i2c_smbus_read_byte_data(fd, MPU_GYRO_XOUT1) << 8 |
-                        i2c_smbus_read_byte_data(fd, MPU_GYRO_XOUT2);
-        int16_t ygyro = i2c_smbus_read_byte_data(fd, MPU_GYRO_YOUT1) << 8 |
-                        i2c_smbus_read_byte_data(fd, MPU_GYRO_YOUT2);
-        int16_t zgyro = i2c_smbus_read_byte_data(fd, MPU_GYRO_ZOUT1) << 8 |
-                        i2c_smbus_read_byte_data(fd, MPU_GYRO_ZOUT2);
+        int16_t xgyro = i2c_smbus_read_byte_data(gy521_fd, MPU_GYRO_XOUT1) << 8 |
+                        i2c_smbus_read_byte_data(gy521_fd, MPU_GYRO_XOUT2);
+        int16_t ygyro = i2c_smbus_read_byte_data(gy521_fd, MPU_GYRO_YOUT1) << 8 |
+                        i2c_smbus_read_byte_data(gy521_fd, MPU_GYRO_YOUT2);
+        int16_t zgyro = i2c_smbus_read_byte_data(gy521_fd, MPU_GYRO_ZOUT1) << 8 |
+                        i2c_smbus_read_byte_data(gy521_fd, MPU_GYRO_ZOUT2);
 				tst_resm(TPASS,"gy-521 test passed");				
 				tst_resm(TINFO,"temp: %f\n", (float)temp / 340.0f + 36.53);
         tst_resm(TINFO,"accel x,y,z: %d, %d, %d\n", (int)xaccel, (int)yaccel, (int)zaccel);
