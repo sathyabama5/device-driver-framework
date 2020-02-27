@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     while (1) 
 		{
         int16_t temp = i2c_smbus_read_byte_data(gy521_fd, MPU_TEMP1) << 8 |
-                        i2c_smbus_read_byte_data(fd, MPU_TEMP2);
+                        i2c_smbus_read_byte_data(gy521_fd, MPU_TEMP2);
 
         int16_t xaccel = i2c_smbus_read_byte_data(gy521_fd, MPU_ACCEL_XOUT1) << 8 |
                          i2c_smbus_read_byte_data(gy521_fd, MPU_ACCEL_XOUT2);
