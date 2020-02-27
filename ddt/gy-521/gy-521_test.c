@@ -28,21 +28,25 @@
 #define MPU_POWER1 0x6b
 #define MPU_POWER2 0x6c
 
-int gy-521_fd = -1;
-char *TCID = "gy-521_test";
+int gy521_fd = -1;
+char *TCID = "gy521_test";
 int TST_TOTAL = 3;
+static const option_t options[] = {
+	{"d:", &dflag,&fileName},
+	{NULL, NULL, NULL}
+};
 
 int main(int argc, char *argv[])
 {
-    int gy-521_fd ;
+    int gy521_fd ;
     char *fileName = "/dev/i2c-0";
     int  address = 0x68;
 	  if (access(fileName,F_OK) == -1)
     {
         tst_brkm(TCONF, NULL, "couldn't find gy-521 device '%s'", fileName);
     }
-	  gy-521_fd = SAFE_OPEN(NULL, fileName, O_RDWR);
-		if (ioctl(fd, I2C_SLAVE, address) < 0) 
+	  gy521_fd = SAFE_OPEN(NULL, fileName, O_RDWR);
+		if (ioctl(gy521_fd, I2C_SLAVE, address) < 0) 
 		{
        tst_resm(TFAIL | TERRNO, "I2C_SLAVE ioctl failed");
 			 exit(1);        
