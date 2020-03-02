@@ -17,7 +17,7 @@
 #define MPU_POWER2 0x6c
 
 
-char *TCID = "gy521_test";
+char *TCID = "gy-521_test";
 int TST_TOTAL = 3;
 
 
