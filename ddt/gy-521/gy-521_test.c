@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     //while (1) 
 		for (int i = 0; i<8; i++) 
 		{
-			if (read(gy521_fd,buffer,1) != 1) 
+			if (read(gy521_fd,buffer,2) != 2) 
 			{
 				tst_resm(TFAIL | TERRNO, "I2C read failed");
 			}
