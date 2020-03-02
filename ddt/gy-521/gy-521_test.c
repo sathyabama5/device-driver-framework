@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 				tst_resm(TFAIL | TERRNO, "I2C read failed");
 			}
 			else {
-         int16_t data = (float)((buffer[0])<<8)+buffer[1];
+         int16_t temp = (float)((buffer[0])<<8)+buffer[1];
         //data = data/4096*5;
         //channel = ((buffer[0] & 0b00110000)>>4);
 				//tst_resm(TPASS,"Channel s%02d TEMPERATURE DATA:  %04f\n",channel,data);
