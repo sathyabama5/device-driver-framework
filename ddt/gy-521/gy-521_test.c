@@ -25,8 +25,8 @@ int main(int argc, char *argv[])
 {
     int gy521_fd ;
 		//float data;
-		char buffer[10]={0};
-    char *fileName = "/dev/i2c-0";
+		int buffer[10]={0};
+    char *fileName = argv[1];
     int  address = 0x68;
 	  if (access(fileName,F_OK) == -1)
     {
@@ -41,30 +41,15 @@ int main(int argc, char *argv[])
     /*int8_t power = i2c_smbus_read_byte_data(gy521_fd, MPU_POWER1);
     i2c_smbus_write_byte_data(gy521_fd, MPU_POWER1, ~(1 << 6) & power);*/
 
-    //while (1) 
-		for (int i = 0; i<8; i++) 
+    while (1) 
 		{
-			if (read(gy521_fd,buffer,2) != 2) 
-			{
-				tst_resm(TFAIL | TERRNO, "I2C read failed");
-			}
-			else {
-         int16_t temp = (float)((buffer[0])<<8)+buffer[1];
-        //data = data/4096*5;
-        //channel = ((buffer[0] & 0b00110000)>>4);
-				//tst_resm(TPASS,"Channel s%02d TEMPERATURE DATA:  %04f\n",channel,data);
-				tst_resm(TPASS,"gy-521 test passed");				
-				tst_resm(TINFO,"temp: %f\n", (float)temp / 340.0f + 36.53);
-				}
-
-
-		/*{
         int16_t temp = i2c_smbus_read_byte_data(gy521_fd, MPU_TEMP1) << 8 |
                         i2c_smbus_read_byte_data(gy521_fd, MPU_TEMP2);
 
        
+
 				tst_resm(TPASS,"gy-521 test passed");				
-				tst_resm(TINFO,"temp: %f\n", (float)temp / 340.0f + 36.53);*/
+				tst_resm(TINFO,"temp: %f\n", (float)temp / 340.0f + 36.53);
        
     }
 return 0;
