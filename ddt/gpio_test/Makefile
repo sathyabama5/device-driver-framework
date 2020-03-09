@@ -27,7 +27,7 @@ top_srcdir              ?= ../../..
 
 include $(top_srcdir)/include/mk/testcases.mk
 
-INSTALL_DIR             := testcases/bin/raspberrypi2-ddt/
+INSTALL_DIR             := testcases/bin/ddt/
 
 #FILTER_OUT_DIRS         :=
 
