@@ -11,7 +11,7 @@
 #include "test.h"
 #include "safe_macros.h"
 
-char *TCID = "gy521_idgy521_id";
+char *TCID = "gy521_id";
 int TST_TOTAL = 3;
 
 #define GY521_SLAVE_ADDRESS     0x68
