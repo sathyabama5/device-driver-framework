@@ -16,7 +16,7 @@
 
 int rtc_fd = -1;
 char *TCID = "rtc_test";
-int TST_TOTAL = 3;gy521_id
+int TST_TOTAL = 3;
 
 struct rtc_time rtc_tm;
 struct tm* local;
