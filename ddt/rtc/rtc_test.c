@@ -15,7 +15,7 @@
 #include "safe_macros.h"
 
 int rtc_fd = -1;
-char *TCID = "rtc_test";
+char *TCID = "rtc-test";
 int TST_TOTAL = 3;
 
 struct rtc_time rtc_tm;
