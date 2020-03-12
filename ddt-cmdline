@@ -1,10 +1,9 @@
 #Tag       Test case
 #---------------------------------------
-audio_playback_test ddt/audio_playback_test /usr/share/sounds/alsa/ Front_Center.wav
+audio_playback_test ddt/audio_playback_test aplay /usr/share/sounds/alsa/Front_Center.wav
 cpu_core_test ddt/cpu_core_test 
 ethernet_test ddt/ethernet_test eth0
 gpio_test ddt/gpio_test  24 1 5
-gpio_test ddt/gpio_test  24 0 5
 gy521_id     ddt/gy521_id 
 rtc_test   ddt/rtc_test -d /dev/rtc0
 spi_test   ddt/spi_test -D /dev/spidev0.1
